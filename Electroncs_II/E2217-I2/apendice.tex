@@ -1,0 +1,82 @@
+%Apéndice
+
+\section{Apéndice}\label{sec:apendice}
+\begin{itemize}
+    \item Incertidumbre según "Guide of Uncertain Measurements" de la ISO o GUM
+
+        \begin{gather}
+            \Delta f=\sqrt{\sum\left( \dfrac{\partial f(\Bar{X} }{\partial X_i} \Delta X_i\right)^2}
+        \end{gather}
+
+    \item Incertidumbre de ganancia de tensión
+    \begin{gather}
+        A_v = \left(\dfrac{V_o}{V_{in}}\right) \pm \Delta A_v  \nonumber \\[0.2cm]
+        \Delta A_v = \sqrt{\left(\dfrac{\partial A_v }{\partial V_{in}}\Delta V_{in}\right)^2+\left(\dfrac{\partial A_v }{\partial V_o}\Delta V_o\right)^2} \nonumber \\[0.2cm]
+        \Delta A_v = \sqrt{\left(\dfrac{V_o}{V_{in}}\Delta V_{in}\right)^2 + \left(\dfrac{1}{V_{in}}\Delta V_o\right)^2}
+        \label{eqn:delta_ganancia}
+    \end{gather}
+
+    \item Incertidumbre de la Corriente
+        \begin{gather}
+            \Delta I=\sqrt{\left(\dfrac{\Delta V_o}{R_L}\right)^2+\left(-\dfrac{V_o\Delta R_l}{R_L^2}\right)^2}
+             \label{eqn:delta_corriente}
+        \end{gather}
+
+    \item Incertidumbre de la Tensión Offset
+        \begin{gather}
+            \Delta V_{os}=\sqrt{\left(\dfrac{\Delta V_o}{1+\dfrac{R_5}{R_2}}\right)^2+\left(-\dfrac{V_oR_2\Delta R_5}{(R_2+R_5)^2}\right)^2+\left(\dfrac{V_oR_5 \Delta R_2}{(R_2+R_5)^2}\right)^2}
+             \label{eqn:delta_tension_offset}
+        \end{gather}
+
+    \item Incertidumbre de la Corriente de Polarización
+        \begin{gather}
+            \Delta I_B=\sqrt{\left(\dfrac{\Delta V_{os}}{R_3}\right)^2+\left(-\dfrac{\Delta V_o}{R_3\left(1+\dfrac{R_5}{R_2}\right)}\right)^2+\left(\dfrac{V_o \Delta R_5}{R_3R_2\left(1+\dfrac{R_5}{R_2}\right)^2}\right)^2+\left(-\dfrac{V_oR_5 \Delta R_2}{R_3(R_2+R_5)^2}\right)^2} +\nonumber\cdots\\[0.5cm] 
+            \cdots \left(-\dfrac{\left(V_{os}\left(1+\dfrac{R_5}{R_2}\right) -V_o\right)\Delta R_3}{R_3^2\left(1+\dfrac{R_5}{R_2}\right)}\right)^2
+             \label{eqn:delta_corriente_polarizacion}
+        \end{gather}
+
+    \item Incertidumbre de la Corriente Offset
+        \begin{gather}
+            \Delta I_{os}=\sqrt{(\Delta I_{B_1})^2+(-\Delta I_{B_2})^2}
+             \label{eqn:delta_corriente_offset}
+        \end{gather}
+
+    \item Incertidumbre de Slew Rate
+        \begin{gather}
+            \Delta S.R.=\sqrt{\left(\dfrac{\Delta \Delta V}{\Delta t}\right)^2+\left(-\dfrac{\Delta V \Delta \Delta t}{\Delta t^2}\right)^2}
+            \label{eqn:delta_slewrate}
+        \end{gather}
+
+    \item Incertidumbre de GBWP
+
+        \begin{gather}
+            \Delta GBWP=\sqrt{(f(\Delta G))^2+(G(\Delta f))^2}
+            \label{eqn:delta_gbwp}
+        \end{gather}
+
+    \item Incertidumbre de Frecuencia
+        \begin{gather}
+            \Delta f = \sqrt{\left(-\dfrac{1}{T^2}\Delta T\right)^2}=\dfrac{1}{T^2}\Delta T
+            \label{eqn:delta_frecuencia}
+        \end{gather}
+
+    \item Incertidumbre de Regulación
+
+        \begin{gather}
+            \Delta Reg=\sqrt{\left(\dfrac{V_{occ}}{V_{osc}^2}\Delta V_{osc}\right)^2+\left(-\dfrac{1}{V_{osc}}\Delta V_{occ}\right)^2}
+            \label{eqn:delta_reg}
+        \end{gather}
+    \item Incertidumbre de Voltaje Mínimo
+
+        \begin{gather}
+            \Delta V_{min}=\sqrt{\left(\Delta V_{sec_p}\right)^2+\left(-\dfrac{1}{2}\Delta V_{r_p}\right)^2+\left(-2\Delta V_{d} \right)^2}
+            \label{eqn:delta_vmin}
+        \end{gather}
+        
+    \item Error o Desviación Estándar
+        \begin{gather}
+            Desv=\dfrac{|Valor_{teorico}-Valor_{Experimental}|}{Valor_{teorico}} \, 100\%
+            \label{eqn:desviación}
+        \end{gather}
+        
+\end{itemize}

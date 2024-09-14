@@ -1,0 +1,12 @@
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.log
+*.fls
+*.out
+*.toc
+
+## Build tool auxiliary files:
+
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy).gz

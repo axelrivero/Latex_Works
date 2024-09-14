@@ -1,0 +1,191 @@
+\documentclass[a4paper,12pt,spanish]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{newtxtext,newtxmath}
+\usepackage{fancyhdr}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm, headheight=20pt]{geometry}
+\usepackage{titlesec}
+\usepackage{graphicx} % Para insertar una imagen en LaTeX y ajustarla en la esquina de un párrafo
+\usepackage{wrapfig} %Para insertar una imagen en LaTeX y ajustarla en la esquina de un párrafo
+\usepackage{caption} % Si deseas quitar el prefijo "Figura" del caption en LaTeX, puedes utilizar el paquete caption o el de cuadro en las tablas
+\usepackage{float}
+\usepackage{lastpage}
+\usepackage{amsmath, bm} %Matemáticas y bm me coloca todas las ecuaciones en negrito
+\usepackage{enumitem} % para personalizar el formato de la lista y poner las primeras palabras de cada ítem en negrita.
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{csvsimple} % Nos muestra tablas en formato csv
+\usepackage{siunitx} %se utiliza para formatear unidades de medida
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+
+% Configuración para ocultar recuadros de enlaces
+\hypersetup{
+    colorlinks=false, % No colorear los enlaces
+    hidelinks          % Ocultar recuadros de enlaces
+}
+
+%Colocar en negritas todos los caption de tablas y figuras
+\captionsetup[table]{labelfont={bf}}
+\captionsetup[figure]{labelfont={bf}}
+
+
+\pgfplotsset{compat=1.18}
+\graphicspath{{Circuitos/}}
+
+\newcommand{\volt}{\si{\volt}}
+\newcommand{\amp}{\si{\amp}}
+\newcommand{\ohm}{\si{\ohm}}
+\newcommand{\watt}{\si{\watt}}
+
+\ctikzset{%
+monopoles/vcc/arrow={Triangle[width=0.8*\scaledwidth, length=\scaledwidth]},
+monopoles/vee/arrow={Triangle[width=6pt, length=8pt]},
+resistors/thickness=3,
+}
+
+% Configuración de los encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\textit{Electrónica II}}
+\fancyfoot[R]{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Ajusta la longitud del espacio entre párrafos
+\setlength{\parskip}{5pt} 
+
+% Configuración de los títulos de secciones
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}[\titlerule]
+
+\begin{document}
+\renewcommand{\tablename}{Tabla} %establece la palabra "Tabla" como el texto que precede al número.
+
+\input{portada}
+
+\input{indice}
+
+\input{introduccion}
+
+\input{marco_teorico}
+
+\input{objetivos}
+
+\input{resumen}
+
+\input{metodologia}
+
+\input{equipos_instrumentos}
+
+\input{componentes_materiales}
+
+\input{resultados}
+
+\input{analisis_resultados}
+\input{conclusiones}
+\input{apendice}
+\input{anexos}
+
+
+
+
+
+
+
+
+%Bibliografía
+
+\begin{thebibliography}{9}
+
+  \bibitem{sdindustrial}
+  SD Industrial,
+  \textit{¿Qué es un transistor? ¿Para qué sirve y cómo funciona?},
+  \url{https://sdindustrial.com.mx/blog/que-es-un-transistor-para-que-sirve-y-como-funciona/}
+
+  \bibitem{facilelectro}
+  Facil Electro,
+  \textit{Imagen del transistor},
+  \url{https://www.facilelectro.es/wp-content/uploads/2018/03/transistores.jpg}
+
+  \bibitem{panamahitek}
+  Panama Hitek,
+  \textit{Modelo PI híbrido del transistor BJT},
+  \url{https://panamahitek.com/modelo-pi-hibrido-del-transistor-bjt/}
+
+  \bibitem{unicrom}
+  Unicrom,
+  \textit{Punto de trabajo Q y recta de carga estática del transistor},
+  \url{https://unicrom.com/punto-trabajo-q-recta-carga-estatica-transistor/}
+
+  \bibitem{ingmecafenix}
+  Ingmecafenix,
+  \textit{Configuraciones y polarizaciones de los transistores},
+  \url{https://www.ingmecafenix.com/electronica/componentes/configuraciones-y-polarizaciones-de-los-transistores/}
+
+  \bibitem{cifpn1_1}
+  CIFPN1,
+  \textit{Amplificadores operacionales y circuitos integrados lineales},
+  \url{https://cifpn1.com/electronica/?p=4151}
+
+  \bibitem{emagister}
+  Emagister,
+  \textit{Guía práctica de transistores},
+  \url{https://www.emagister.com/uploads_user_home/Comunidad_Emagister_5896_transistor_2.pdf}
+
+  \bibitem{uvadoc}
+  UVaDOC,
+  \textit{Estudio y caracterización de un amplificador de audio},
+  \url{https://uvadoc.uva.es/bitstream/handle/10324/24434/TFG-%3Bjsessionid=ED3C8DEA5AC878638E0B31B2D1A7821F?sequence=1}
+
+  \bibitem{libretexts}
+  LibreTexts,
+  \textit{El Amplificador Diferencial},
+  \url{https://espanol.libretexts.org/Ingenieria/Amplificadores_Operacionales_y_Circuitos_Integrados_Lineales_-_Teor%C3%ADa_y_Aplicaci%C3%B3n_(Fiore)/01%3A_Conceptos_introductorios_y_fundamentos/1.6%3A_El_Amplificador_Diferencial}
+
+  \bibitem{industriasgsl}
+  Industrias GSL,
+  \textit{Amplificador diferencial: características y aplicaciones},
+  \url{https://industriasgsl.com/blogs/automatizacion/amplificador-diferencial}
+
+  \bibitem{cifpn1_2}
+  CIFPN1,
+  \textit{El transistor bipolar de unión (TBJ)},
+  \url{https://cifpn1.com/electronica/?p=4190}
+
+  \bibitem{cifpn1_3}
+  CIFPN1,
+  \textit{Amplificador en emisor común},
+  \url{https://cifpn1.com/electronica/?p=4060}
+
+  \bibitem{distron}
+  Distron,
+  \textit{Amplificador de potencia},
+  \url{https://distron.es/amplificador-de-potencia/}
+
+  \bibitem{clasesparatodos}
+  Clases Para Todos,
+  \textit{Amplificador de Clase AB},
+  \url{https://clasesparatodos.org/amplificador-de-clase-ab/}
+
+
+  \bibitem{euclides}
+  Euclides,
+  \textit{Error Porcentual},
+  \url{https://euclides.org/error-porcentual/}
+
+\end{thebibliography}
+
+
+
+\end{document}
+\label{LastPage}

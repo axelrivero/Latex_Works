@@ -1,0 +1,120 @@
+%Análisis de Resultados
+
+\section{Análisis de Resultados}
+
+    \subsection{Parte 1. Aplicaciones De Las Topologías Clásicas}
+
+        Como se observan en el apartado de la Sección \ref{sec:resultados} en la división \ref{subsec:parte1}, se tienen los resultados de la practica 1 de aplicaciones de las topologías clásicas, que por ende se a determinado lo siguiente:
+
+        La tabla \ref{tab:desviacion_resultados1} da una desviación mínima en los resultados, indicando que el diseño realizado fue el adecuado para la práctica, demostrando que cada una de las resistencias y retroalimentación de las topologías clásicas dieran las ganancias adecuadas con su respectivo cambio de fases, en este caso, en el inversor; estas consecuencias se evidencia en la metodología, en una ganancia negativa, observando un desfase de 180° como se puede apreciar en la gráfica \ref{fig:exp_inversor}.
+
+        Por otro lado, se tiene el consumo debido a diferentes cargas por la topología del convertidor de tensión a Corriente (Fuente de corriente) donde en lo teórico se tomo en cuenta para $1mA$, sin embargo, el diseño fue adecuado, esto se debe a que sus resistencia de carga no modificaba su corriente de salida, aunque esta si obtuvo una desviación estándar de $64.4\%$. Esto es debido a una mala toma de voltaje de salida, con las simulaciones se pudo evidenciar que se tomo el valor de salida Vo1, no la adecuada. 
+
+        Ahora bien, se sabe que se obtuvo un excelente exactitud y precisión en sus medidas, debido a su diseño, aunque no se puede despreciar el funcionamiento de cada una de las topologías.
+
+        Respecto a los inversores, el inversor, aunque posea una impedancias de salida un poco mayor que la entrada acá no dio pequeñas desviación en su medición, sin embargo su característica mas importante es su cambio de fase; A diferencia del no inversor, que mantiene su fase. Este posee una alta impedancia de entrada, ya que va por su entrada no inversora, con una salida de impedancia muy baja. Perfecto para no invertir su fase.
+
+        El restador, como se observa en la Simulación \ref{fig:sim_restador} y en la imagen de la practica \ref{fig:exp_restador}, ambas son iguales en salida y entrada, debido a que esta practica no hubo dos fuentes de entrada, sino una fuente en común, consecuentemente se tiene una atenuación, por ende resta sus señales de entrada, siendo la mitad, a causa de tener una señal en común, obteniendo lo esperado; dando a entender que la ganancia de esta topología depende de sus resistencias, si y solo si, se tiene unas señales de entradas adecuadas, pudiendo ser en DC o AC.
+
+        El integrador de Boo, como se contempla en la imagen \ref{fig:exp_integrador_boo}, la salida, es la señal integrada de la entrada, a consecuencia del capacitor que se halla por el lado no inversor, permitiendo ese tiempo de retardo en su salida.
+        
+
+    \subsection{Parte 2. Amplificador Operacional Real}    
+
+        Como se observan en el apartado de la Sección \ref{sec:resultados} en la división \ref{subsec:parte2}, se tienen los resultados de la practica 2 del amplificador operacional real, que por ende se a determinado lo siguiente:
+
+        Como se aprecia en la tabla \ref{tab:tension_offset}, haciendo la respectiva configuración, se colocan ambas entradas común y puestas a tierra, realizamos el estudio completo del offset de un amplificador real, indicando que existe un pequeño voltaje que puede interferir la señal amplificada, perdiendo precisión y exactitud en el diseño de alguna topología de interés. Sin embargo, esta tensión offset puede ser corregida, como se observa en el apartado \ref{sec:anexos} siendo este parte de los anexos en el datasheet  (Hoja de datos) del amplificador operacional de propósito general \textbf{LM741}, posee 8 pines, donde si se conecta un potenciómetro al pin 1 y 5 y el tercer pin variable del potenciómetro a tierra se puede ajustar el voltaje offset permitiendo anular este ultimo, esto se realiza de la misma manera como se realizo la practica sin fuente para disminuir su offset. 
+
+        De igual manera, como se visualizo la tensión offset, se genera una corriente de polarización, en consecuencia resulta una corriente offset, los datos se hallan en las tablas , \ref{tab:corriente_polarizacion1},  \ref{tab:corriente_polarizacion2} y \ref{tab:corriente_offset}. Esto ocurre cuando sus entradas no inversora e inversora se encuentran en común. Se logra anular o desviar de la misma manera que se menciono anteriormente con el potenciómetro entre sus pines 1 y 5. 
+
+        Esto da como evidencia que puede existir una señal offset que puede cambiar nuestra señal de salida, ya sea amplificada o no.
+
+        Por otro lado, la tabla \ref{tab:gbwp} nos indica una ganancia y una frecuencia para determinar si se cumple el \textbf{Producto del Ancho de Banda por la Ganancia}, se puede entender de mejor manera en la gráfica \ref{fig:puntos_gbwp}, donde efectivamente se cumple que al aumentar su frecuencia de corte, su ganancia va disminuyendo. Indicando el rendimiento del amplificador operacional en distintas frecuencias. Por consiguiente, la tabla \ref{tab:calculo_gbwp} se muestran los resultados del calculo, de este modo se halla el rendimiento en su ganancia con respecto a su frecuencia, los valores mas altos da a comprender que permite una mayor estabilidad a frecuencias altas y un ancho de banda bastante grande adecuado para aplicaciones de alta frecuencia como comunicaciones, y otros sistemas. Sin embargo, se puede percibir en la tabla \ref{tab:gbwp} que los puntos 1 y 2 son iguales, esto se obtuvo debido a una entrada de señal grande, dado que fue de 1 Vp, obteniendo distorsión de inmediato por su polarización, como consecuencia se observa esa mala lectura, por ende, se debe realizar siempre con pequeñas señales preferiblemente inferiores a 500m Vp.
+
+        Ahora bien, tomando en cuenta la configuración de la figura \ref{fig:buffer}, la imagen \ref{fig:exp_sr} y el calculo del Slew Rate en la tabla \ref{tab:exp_sr}, se obtuvo un valor alto expresando que el amplificador puede seguir cambios rápidos en la señal de entrada, mientras que un valor bajo puede resultar en distorsión en la salida. como se observa, su cambio es rápido por ende no existen distorsiones en la imagen de salida, entonces en un buffer, el slew rate puede no ser un factor crítico siempre y cuando la frecuencia de la señal de entrada no sea tan alta, éste se puede convertir en un limitante. Sin olvidar que su señal de entrada fue un pulso con un  Duty Cycle de 50\% con una alta frecuencia.
+
+        Por ultimo, se obtuvo los limites de excursión de la señal de salida y esta se ve en la imagen \ref{fig:exp_buffer_limites}, donde estos están limitados por sus alimentaciones de polarización como lo es $V_{CC}$ y $V_{EE}$, en consecuencia da los valores que se hallan en la tabla \ref{tab:exp_buffer_limites}. 
+
+    \subsection{Parte 3. Filtros Activos}
+
+        En el apartado de Resultados \ref{sec:resultados} en la división \ref{subsec:parte3}, se tienen los resultados de Filtros activos, se hallaron las frecuencias de corte de las distintas topologías y se puede apreciar que al inyectar una señal de entrada cuadrada (pulso) con una cierta frecuencia, da a la señal de salida su tercer armónico donde coincide con su frecuencia de corte con una entrada senoidal.
+
+        \begin{itemize}
+            \item \textbf{Filtro de Variables de Estado}
+
+                Como se pudo demostrar a través de las tablas \ref{tab:exp_var_estado} y \ref{tab:exp_var_estado_frecorte}, que esta topología, tenia una configuración de un filtro pasa bajos, reflejando que los cálculos en el diseño fueron los adecuado, sin embargo, se tiene una desviación estándar considerable debido a que los cálculos del diseño te tuvieron que tomar en cuenta distintas constantes y no se tomaron en cuenta las distintas tolerancias de los elementos pasivos que se usaron en el montaje. La gráfica \ref{fig:resp_frec_var_estado} nos da la respuesta en frecuencia de esta topología siendo la adecuada y comparándose a la que se simulo en la Metodología \ref{sec:metodologia}, que es la gráfica \ref{fig:sim_var_estado_bode}.
+
+                Con respecto a los "armónico" se refiere a componentes de frecuencia específica que pueden encontrarse en una señal periódica. Las señales eléctricas periódicas, como las ondas sinusoidales, pueden descomponerse en diferentes componentes armónicos, cada uno con su propia frecuencia y amplitud.
+
+                En el caso de un circuito eléctrico, especialmente en el análisis de circuitos de corriente alterna (CA), las corrientes y tensiones periódicas pueden expresarse como la suma de varios armónicos. El armónico fundamental es la frecuencia base, y los armónicos superiores son múltiplos enteros de esa frecuencia fundamental.
+
+                El diseño de filtros activos pasa bajos con la frecuencia de su tercer armónico coincidiendo con la frecuencia de corte permite un control preciso sobre las características de la señal y contribuye a la eficacia y rendimiento del sistema.
+
+                Su señal de salida se puede apreciar en el gráfico \ref{fig:armonico_var_estado} y en este caso en la simulación \ref{fig:sim_var_estado_armonico_vo} realizada fue con acople DC por esa razón se ve con un offset, por ende esta tiene distinta referencia que la indicada con el osciloscopio digital.
+
+                Por otra parte se tienen las demás salidas que dan como resultado las gráficas \ref{fig:resp_frec_var_estado_pb} y \ref{fig:resp_frec_var_estado_pa}, donde estas no se les aplico el diseño para obtener una ganancia de dos y una frecuencia de corte de 2.7KHz, sin embargo, se pudo observar que se obtuvo una apreciable comparación con las simulaciones del mismo diseño para el pasa bajo del variables de estados, concluyendo que si cumplían con el debido filtro de señales, pero no el deseado.
+
+            \item \textbf{Filtro Pasa Bajos con Topologías Sallen-Key}
+                De igual manera como en la topología anterior, se evidencia en la tabla \ref{tab:exp_sallen_key}, como se obtuvo la respuesta en frecuencia de la gráfica \ref{fig:resp_frec_sallen_key}, ésta obtuvo una desviación estándar de 97.08\%  siendo el mayor de todas las mediciones experimentales realizadas, como se refleja en la tabla \ref{tab:exp_sallen_key_frecorte}, realizando la comparación entre lo teórico y experimental. 
+
+                No se obtuvo lo esperado en las mediciones, debido  a que sus diferentes análisis en frecuencias, da a comprender que la configuración diseñada se debe tomar en cuenta las tolerancias de cada uno de los elementos pasivos que se toman en consideración, permitiendo ser precisos en lo teórico para adecuar lo practico a lo teórico. De esta manera, optimizar el análisis y no permitir variaciones en circuitos tan esenciales como los filtros.
+
+                Su gráfica \ref{fig:armonico_sallen_key}, nos muestra la señal de salida con la frecuencia de su tercer armónico coincidiendo con la frecuencia de corte con una entrada senoidal como se indico anteriormente esto tiene sus beneficios y distintas aplicaciones como pueden ser para audio, instrumentación electrónica, control de sistemas, electrónica de potencias, etc. Se realiza la comparación con la simulación \ref{fig:sim_sallen_key_armonico_vo}, tal cual como la topología pasada, este esta en acople DC, de igual manera se obtuvo lo esperado
+
+            \item \textbf{Filtro Pasa Bajos con Topología de Retroalimentaciones Múltiples}
+
+                Por ultimo se tiene esta topología donde mantiene la desviación estándar mas baja entre las topologías anteriormente analizadas, sin embargo al igual que en las anteriores cada una de las mediciones y diseños teóricos nos permitió adecuar la topología a lo esperado dándonos un filtro pasa bajos con un ancho de banda igual en los tres casos, lo considerable es que en la banda de atenuación cada una es distinta y puede observarse en las respuesta de frecuencia dados por los puntos tomados de las distintas tablas de medidas y cálculos Experimentales de la ganancia y frecuencia en este caso se tiene la tabla \ref{tab:exp_retro_multiples}, que nos da el diagrama asintótico de Bode en la gráfica \ref{fig:resp_frec_retro_multiples}.
+
+                Su armónico se mantuvo igual a la simulación como se aprecia en la gráfica \ref{fig:sim_retro_bode}, donde se puede asemejar en la gráfica \ref{fig:armonico_retro_multiples}.
+        \end{itemize}
+
+        
+    \subsection{Parte 4. Fuentes Lineales y Reguladores Monolíticos}
+
+        
+        En el apartado de Resultados \ref{sec:resultados} en la división \ref{subsec:parte4}, se tienen los resultados de las mediciones experimentales de los reguladores monolíticos y la fuente de corriente que corresponden a las figuras \ref{fig:reg_sinct}, \ref{fig:regulador_sal_ajustable} y \ref{fig:fuente_corriente_variable}. Se desglosaran cada uno de las figuras, para dar una mayor interpretación y análisis del laboratorio.
+
+        
+
+        \begin{itemize}
+            \item \textbf{Regulador con Tensión de Salida Fija}
+
+                Las tablas \ref{exp_reg_sinct}, \ref{exp_reg_sinct2} y \ref{tab:desv_reg_sinct}, reflejan cada una de las mediciones directas e indirectas que se realizaron para dar un análisis expedito; por consiguiente se tiene que en las condiciones que se colocaron en el circuito de la figura \ref{fig:reg_sinct}, cuando no posee una carga el circuito  tiende a poseer un Voltaje de Rizo mas cercano a cero, a consecuencia de esto, se podría mencionar que se mantiene estable, por esa razón ante la ecuación \ref{eqn:regulacion}, se realizan ambas condiciones porque al colocar la carga, existe una caída de tensión distinta en la salida, y eso es lo que se desea averiguar, si se obtiene una regulación estable.
+
+                Aunque se usan dos cargas bajas, existen sus diferencias, por ejemplo, su voltaje de rizo cambia aunque sea por milésimas, esto permite que el voltaje de entrada al circuito integrado 7805 o regulador de voltaje sea variable, sin embargo como se menciono en la sección de metodología \ref{sec:metodologia} o viendo el datasheet del 7805, que se localiza en los anexos \ref{sec:anexos}, cada uno de esos valores de entrada se hallan dentro de los parámetros que permite la entrada para poder regular 5V, permitiendo obtener una excelente regulación, ya que su salida no varia. 
+
+                Sin embargo, se realizaron pruebas para ver el comportamiento del integrado 7805, tras colocar una resistencia mas pequeña que la exigida que era aproximadamente de 60 ohm, esta vez se probo con 10 ohm, donde se pudo observar que no cumple con lo requerido debido a que la corriente que pasa por esa resistencia es muy alta, casi muy parecida a una resistencia Shunt, alterando de esta manera el voltaje de salida donde se obtuvo una lectura de 3.6, con un voltaje de rizo de 2V, muy alta debido a la variación de voltaje por su carga, y se puede añadir que su voltaje de entrada al 7805, no esta entre sus valores que el mínimo seria 7 y este se encuentra a 5.35 V, interesante manera de demostrar que con una carga muy baja nuestro regulador no opera.
+
+                Por otro lado, el voltaje de rizo posee una desviación estándar con un promedio de mas del 50 \% indicando que los cálculos teóricos para el diseño, puede tener algún procedimiento incorrecto; aunque no es de gravedad esta desviación, éste voltaje de rizo nos permite que se mantenga mas estable ese voltaje de entrada, por esa razón, ella es importante, no obstante no tiene grandes cambios al punto que es menos de 1.5V viendo el teórico.
+
+                Se debe tener en cuenta que su corriente se mantuvo dentro de los limites calculados en la teoría, debido a los valores comerciales usados en la practica, no dio con exactitud, pese a esto es la corriente que se esperaba en las mediciones experimentales.
+
+                Indicándonos que aunque se tuvo inconvenientes con el desarrollo del voltaje de rizo, el procedimiento realizado para esta figura, fueron los adecuados.
+
+
+            \item \textbf{Regulador con Tensión de Salida Ajustable}
+
+                Esta figura se enfoca en la carga, después de regular la salida del 7805, donde se esta a un solo polo alimentado el LM741 con el  $V_{in_{7805}}$, con un divisor de tensión por su entrada no inversora siendo uno de los divisores un potenciómetro denominado $XR_{v1}$, donde podemos visualizar en la figura \ref{fig:regulador_sal_ajustable} que existe una corriente de polarización del OPAMP que pasa por $R_1$, todos estos datos se hallan en la tabla \ref{tab:exp_regulador_sal_ajustable}. 
+
+                Esta ultima nos muestra a plena vista que su voltaje de salida así tenga carga o no, regulará la salida, cumpliendo con la regulación donde no existe alguna variación perceptible.
+
+                Incluso la corriente de polarización cumple con lo calculado en lo teórico, demostrando que las cuentas son las adecuadas para esta configuración. 
+
+                Por ultimo, da la confiabilidad de que aunque existan distintas cargas, este se mantendrá estable, permitiendo que no existe un alto consumo de parte de la carga trayendo como consecuencia deterioro del equipo o una falla severa.
+                Es un equipo confiable.
+
+            \item \textbf{Fuente de Corriente Variable}   
+                En la figura \ref{fig:fuente_corriente_variable}, se ve como su señal de entrada se da por un divisor de tensión creado entre la carga y las resistencias que se encuentra en la salida del 7805, siendo por la entrada no inversora, con retroalimentación negativa y  una configuración de buffer.
+
+                Debido a esta configuración se tienen los resultados de las mediciones experimentales e indirectas en la tabla \ref{tab:exp_fuente_corriente_variable}, donde nos indica su corriente que dependiendo de como se ajuste el potenciómetro éste mandara mayor o menor corriente, hacia la carga, que en esta figura se tiene el led (rojo) y la pequeña resistencia $R_L$ que en general es una pequeña carga con un stand by para verificación del paso de corriente en ese punto de salida.
+
+                Ahora bien, como se indica en la tabla \ref{tab:desv_fuente_corriente_variable}, existe una desviación estándar bastante aceptable, debido a esto, realiza el recorrido indicado, que al dar cero, tenga la menor corriente debido a que  la división de tensión se realiza tomando completamente la resistencia de 1K ohm existiendo una mayor resistencia para el paso de corriente, sin embargo, posee un voltaje de salida adecuado para llegar al voltaje umbral del led y de esta manera encender.
+
+                Este ultimo, solo disminuye un poco su intensidad que demuestra que existe una disminución en la corriente debido al ajuste del potenciómetro. 
+
+                Por lo tanto, cumple la función requerida y evaluada en la metodología de la practica. Siendo una configuración adecuada para ser una fuente de corriente variable, entre 4 y 16 mA.
+        \end{itemize}
+    
+
+
+\newpage

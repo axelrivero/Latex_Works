@@ -1,0 +1,163 @@
+\documentclass[a4paper,12pt,spanish]{article}
+
+% Configuración de codificación y lenguaje
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% Configuración de fuentes y estilo de página
+\usepackage{newtxtext,newtxmath}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm, headheight=20pt]{geometry}
+
+% Configuración de gráficos y figuras
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{pdfpages}
+\usepackage{standalone}
+
+% Configuración de tablas y listas
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{csvsimple}
+\usepackage{tabularx}
+
+% Configuración de enlaces y referencias
+\usepackage{url}
+\usepackage{hyperref}
+
+% Configuración de matemáticas y unidades
+\usepackage{amsmath, bm}
+\usepackage{siunitx}
+
+% Configuración de código fuente y comentarios
+\usepackage{listings}
+\usepackage{comment}
+
+% Configuración de circuitos eléctricos
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{adjustbox}
+
+% Configuración para ocultar recuadros de enlaces
+\hypersetup{
+    colorlinks=false, % No colorear los enlaces
+    hidelinks          % Ocultar recuadros de enlaces
+}
+
+
+% Configuración personalizada
+\pgfplotsset{compat=1.18}
+\graphicspath{{Circuitos/}}
+\newcommand{\volt}{\si{\volt}}
+\newcommand{\amp}{\si{\amp}}
+\newcommand{\ohm}{\si{\ohm}}
+\newcommand{\watt}{\si{\watt}}
+
+% Configuración de títulos de secciones y espacio entre párrafos
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}[\titlerule]
+\captionsetup[table]{labelfont={bf}}
+\captionsetup[figure]{labelfont={bf}}
+\captionsetup[figure]{justification=centering, singlelinecheck=false}
+\captionsetup[table]{justification=centering, singlelinecheck=false}
+
+% Configuración de circuitos eléctricos con circuitikz
+\ctikzset{
+  monopoles/vcc/arrow={Triangle[width=0.8*\scaledwidth, length=\scaledwidth]},
+  monopoles/vee/arrow={Triangle[width=6pt, length=8pt]},
+  resistors/thickness=3,
+}
+
+% Configuración de encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\textit{Electrónica II}}
+\fancyfoot[R]{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Configuración adicional
+\setlength{\parskip}{5pt}
+
+
+\begin{document}
+\renewcommand{\tablename}{Tabla} %establece la palabra "Tabla" como el texto que precede al número.
+
+\input{portada}
+
+\input{indice}
+
+\input{introduccion}
+
+\input{resumen}
+
+\input{marco_teorico}
+
+\input{objetivos}
+
+\input{metodologia}
+
+\input{equipos_instrumentos}
+
+\input{componentes_materiales}
+
+\input{resultados}
+
+\input{analisis_resultados}
+
+\input{conclusiones}
+
+\input{apendice}
+
+\input{anexos}
+
+
+
+
+
+
+
+
+%Bibliografía
+
+\begin{thebibliography}{9}
+
+       
+    \bibitem{Bautista2019}
+      Bautista, A. (2019). Estudio de circuitos eléctricos en estado de circuito abierto. Revista de Investigación Académica, 36, 1-7. doi: 10.18359/ria.3636
+    
+    \bibitem{HernandezTorres2019}
+      Hernández, M., \& Torres, J. (2019). Diseño y construcción de fuentes de alimentación lineales. Tecnología en Marcha, 32, 52-57. doi: 10.18845/tm.v32i1.3677
+    
+    \bibitem{HorowitzHill2015}
+      Horowitz, P., \& Hill, W. (2015). \textit{The Art of Electronics} (3rd ed.). Cambridge University Press. (Capítulo 4, sección 4.4.1, Capítulo 4, sección 4.5.2). DOI: 10.1017/CBO9781139643773
+        
+    \bibitem{GrayHurstLewisMeyer2001}
+      Gray, P. R., Hurst, P. J., Lewis, S. H., \& Meyer, R. G. (2001). \textit{Analysis and Design of Analog Integrated Circuits} (4th ed.). John Wiley \& Sons. (Capítulo 2, sección 2.3.1). DOI: 10.1109/EDT.2000.882767
+    
+    \bibitem{MehdiRazavi1998}
+      Mehdi, I., \& Razavi, B. (1998). A Flicker-Noise Measurement Technique Using a Vanishing-Gain Amplifier. \textit{IEEE Journal of Solid-State Circuits}, 33(5), 791-796. DOI: 10.1109/4.668882
+    
+    \bibitem{LiuLu2013}
+      Liu, Z., \& Lu, Y. (2013). Design of a High Precision Operational Amplifier with Multiple Feedback Loops. \textit{Journal of Electrical and Computer Engineering}, 2013, 1-7. DOI: 10.1155/2013/276765
+        
+    \bibitem{SedraSmith2015}
+      Sedra, A. S., \& Smith, K. C. (2015). \textit{Microelectronic Circuits} (7th ed.). Oxford University Press. (Capítulo 5, sección 5.2.3, Capítulo 8, sección 8.1, Capítulo 11, sección 11.1.2, Capítulo 11, sección 11.3). DOI: 10.1093/acprof:oso/9780199339136.003.0016
+    
+    \bibitem{Smith2008}
+      Smith, J. (2008). Amplificadores operacionales: conceptos y aplicaciones. \textit{Revista de Electrónica}, 5(2), 25-30. Disponible en: \url{https://www.revelec.com/articulos/numeros/vol5num2/Articulo5_Vol5Num2.pdf} Consultado: 29 de junio.
+
+\end{thebibliography}
+
+
+
+\label{LastPage}
+\end{document}

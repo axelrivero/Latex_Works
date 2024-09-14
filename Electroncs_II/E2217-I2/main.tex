@@ -1,0 +1,163 @@
+\documentclass[a4paper,12pt,spanish]{article}
+\usepackage[utf8]{inputenc} %le estás diciendo a LaTeX que tu archivo fuente (el archivo .tex) está codificado en UTF-8, permitiéndote escribir caracteres especiales directamente en el código fuente del documento sin necesidad de recurrir a comandos especiales para cada caracter especial.
+\usepackage[spanish]{babel} % facilita la composición de documentos en español en LaTeX, asegurando que las convenciones tipográficas y lingüísticas sean las adecuadas para el idioma seleccionado.
+\usepackage{newtxtext,newtxmath} %se utiliza para cambiar las fuentes tipográficas de tu documento a las proporcionadas por newtxtext y newtxmath, que emulan el estilo de la fuente Times.
+\usepackage{fancyhdr}  % es la instrucción para cargar el paquete que te permite personalizar fácilmente los encabezados y pies de página de tu documento LaTeX.
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm, headheight=20pt]{geometry} %te permite definir las dimensiones y márgenes de la página, así como la altura del área del encabezado de manera personalizada para tu documento LaTeX.
+\usepackage{titlesec} % te permite personalizar la apariencia de los títulos de sección y otros elementos similares en tu documento LaTeX mediante la configuración de parámetros específicos proporcionados por el paquete.
+\usepackage{graphicx} % es necesario cuando deseas trabajar con imágenes en LaTeX, proporcionando las herramientas necesarias para incluir y manipular gráficos en tus documentos.
+\usepackage{wrapfig} %Este paquete permite la inclusión de figuras o tablas en un documento y el texto fluye alrededor de ellas.
+\usepackage{caption} % Si deseas quitar el prefijo "Figura" del caption en LaTeX, puedes utilizar el paquete caption o el de cuadro en las tablas.Este paquete mejora y personaliza la apariencia de las leyendas (captions) de figuras y tablas en tu documento.
+\usepackage{float} %El paquete float proporciona mejoras y opciones adicionales para controlar el posicionamiento de los objetos flotantes, como figuras y tablas, en tu documento. Algunas de las funciones y opciones que el paquete float ofrece incluyen: H (Here): Permite posicionar el objeto flotante "aquí mismo" en el código fuente. Por ejemplo, puedes usar \begin{figure}[H] para forzar que la figura se coloque exactamente en el lugar del código fuente donde lo has colocado.
+\usepackage{lastpage} %es útil cuando necesitas acceder al número total de páginas en tu documento LaTeX para realizar ajustes específicos, como la numeración de páginas en encabezados o pies de página.
+\usepackage{amsmath, bm} %amsmath: Este paquete es parte del conjunto de paquetes AMS (American Mathematical Society) y mejora las capacidades de LaTeX para el manejo de fórmulas matemáticas. Algunas de las características notables proporcionadas por amsmath incluyen: Entornos matemáticos mejorados como align, gather, split, etc. Comandos adicionales para formatos específicos, como \text para incluir texto en modo matemático y \DeclareMathOperator para definir nuevos operadores. Mejoras en la calidad tipográfica de las fórmulas matemáticas. Este paquete es fundamental para escribir fórmulas matemáticas en LaTeX y es muy ampliamente utilizado. bm: Este paquete permite el uso de caracteres en negrita en modo matemático. Puedes usar el comando \bm para poner en negrita símbolos matemáticos. Por ejemplo, \bm{x} producirá una versión en negrita de la letra "x". Esto es útil, especialmente cuando necesitas resaltar vectores y otros símbolos matemáticos en negrita.
+\usepackage{enumitem} % El paquete enumitem proporciona mejoras y mayor flexibilidad en la personalización de listas (como listas numeradas, listas con viñetas, etc.) en comparación con las opciones estándar de LaTeX. Algunas de las características y opciones que enumitem proporciona incluyen: Personalización de etiquetas: Puedes cambiar fácilmente el formato de las etiquetas de las listas, como modificar el estilo, el tamaño de la fuente, el formato de numeración, entre otros. Ajuste de espaciado: Puedes controlar el espaciado entre elementos de la lista, antes y después de la lista, y más. Configuración de diseños: Puedes ajustar la apariencia y el diseño de las listas según tus preferencias.
+\usepackage{tikz} % TikZ es una potente herramienta de dibujo gráfico que te permite crear gráficos, diagramas y figuras directamente en tu documento. Algunas características y capacidades clave de TikZ incluyen: Flexibilidad en la creación de gráficos: Puedes dibujar una amplia variedad de gráficos, desde diagramas simples hasta gráficos más complejos y personalizados. Capacidad para crear diagramas de flujo, árboles, gráficos, etc.: TikZ es especialmente útil para crear diagramas técnicos y estructuras visuales. Integración con LaTeX: Al ser un paquete de LaTeX, puedes utilizar comandos y funciones LaTeX en tus figuras TikZ, permitiendo una integración perfecta con el contenido del documento.
+\usepackage{circuitikz} % Circuitikz es una extensión de TikZ específicamente diseñada para la creación de diagramas de circuitos eléctricos. Algunas de las características y capacidades clave de circuitikz incluyen: Elementos de circuito predefinidos: Proporciona una amplia variedad de elementos de circuito predefinidos, como resistencias, condensadores, inductores, fuentes de voltaje, fuentes de corriente, etc. Flexibilidad en el diseño: Puedes personalizar y ajustar la apariencia de los elementos del circuito según tus necesidades. Integración con TikZ y LaTeX: Al ser una extensión de TikZ, puedes utilizar las capacidades de dibujo de TikZ y los comandos de LaTeX en tus diagramas de circuitos.
+\usepackage{pgfplots} % pgfplots es una herramienta extremadamente poderosa para la creación de gráficos y visualización de datos dentro de documentos LaTeX. Algunas de las características y capacidades clave de pgfplots incluyen: Diversos tipos de gráficos: Puedes crear gráficos de líneas, gráficos de dispersión, gráficos de barras, gráficos de áreas y muchos otros tipos de gráficos. Configuración detallada: pgfplots te permite ajustar cada aspecto de tus gráficos, desde la apariencia de los ejes hasta la personalización de los colores y estilos de línea. Capacidades de exportación de datos: Puedes cargar tus datos directamente desde un archivo o proporcionarlos en el código LaTeX, y pgfplots se encargará de la representación gráfica.
+\usepackage{siunitx} % siunitx es una herramienta muy útil para el manejo y la representación de unidades y cantidades físicas en documentos científicos y técnicos. Algunas de las características y capacidades clave de siunitx incluyen: Formato de unidades: Puedes utilizar el comando \si para representar unidades de manera coherente y con formato correcto. Formato de cantidades: El comando \num te permite representar cantidades numéricas de manera adecuada, gestionando la separación de miles, decimales y otros aspectos de formato. Cálculos con unidades: siunitx facilita los cálculos con cantidades que incluyen unidades, garantizando que el resultado se presente correctamente. Compatibilidad con diferentes formatos de unidades: Puedes cambiar fácilmente entre diferentes formatos de unidades (por ejemplo, entre unidades del sistema internacional y unidades imperiales) sin tener que ajustar manualmente el formato.
+\usepackage{adjustbox} % adjustbox es un paquete versátil que te permite ajustar y modificar el tamaño de objetos en tu documento, especialmente útil para gestionar gráficos, tablas y otros elementos. Algunas de las características y capacidades clave de adjustbox incluyen: Ajuste de tamaño: Puedes utilizar el entorno adjustbox para cambiar el tamaño de un objeto, como una imagen, una tabla o cualquier contenido. Rotación: adjustbox permite rotar objetos según un ángulo especificado. Espejo y reflejo: Puedes reflejar horizontal o verticalmente un objeto utilizando adjustbox. Alineación: Permite alinear objetos vertical u horizontalmente.
+\usepackage{array} % array es un paquete que extiende y mejora las funciones proporcionadas por el entorno de tablas estándar de LaTeX. Algunas de las características y capacidades clave de array incluyen: Nuevas opciones de formato: array introduce nuevas opciones de formato para columnas de tablas, permitiéndote personalizar la alineación y el formato de contenido de cada columna. Más flexibilidad en el diseño de tablas: Con array, puedes definir nuevos tipos de columnas y tener más control sobre el espaciado y el diseño de tus tablas. Compatibilidad con otros paquetes: array se integra bien con otros paquetes de tablas como tabularx y colortbl, ofreciendo aún más flexibilidad y opciones de diseño.
+\usepackage{booktabs} % booktabs es un paquete diseñado para mejorar la apariencia y la calidad tipográfica de las tablas en documentos escritos en LaTeX. Se centra en proporcionar líneas horizontales de alta calidad y recomendaciones para la presentación de tablas profesionales. Algunas de las características y capacidades clave de booktabs incluyen: Líneas horizontales mejoradas: booktabs recomienda el uso de líneas horizontales mejor diseñadas para mejorar la legibilidad y la estética de las tablas. Espaciado mejorado: Proporciona comandos para agregar espacio adicional entre las líneas horizontales y verticales de la tabla. Uso de reglas específicas: En lugar de utilizar \hline, booktabs introduce comandos como \toprule, \midrule y \bottomrule para mejorar el aspecto visual de las líneas horizontales.
+\usepackage{csvsimple} % N csvsimple es un paquete que facilita la importación y procesamiento de datos almacenados en archivos CSV (Comma-Separated Values) en documentos LaTeX. Algunas de las características y capacidades clave de csvsimple incluyen: Importación de datos CSV: Puedes cargar datos de archivos CSV directamente en tus documentos LaTeX utilizando el comando \csvautotabular o \csvreader. Personalización del formato: csvsimple permite ajustar el formato de presentación de los datos, especificar el separador de columnas, manejar encabezados y controlar otras opciones de formato. Procesamiento de datos: Puedes utilizar comandos y opciones de csvsimple para realizar operaciones en los datos, como filtrar, ordenar y seleccionar columnas específicas.
+\usepackage{multirow} % multirow es un paquete que facilita la creación de celdas fusionadas en tablas, permitiendo que el contenido de una celda abarque múltiples filas. Algunas de las características y capacidades clave de multirow incluyen: Celdas fusionadas verticalmente: Puedes utilizar el comando \multirow para fusionar celdas verticalmente y colocar el contenido en el centro o en la parte superior de las celdas fusionadas. Personalización del formato: multirow te permite especificar el número de filas a fusionar y ajustar el formato del contenido. Compatibilidad con otros comandos de tablas: Puedes utilizar multirow en combinación con otros comandos y paquetes de tablas para obtener la apariencia deseada.
+\usepackage{url} % Este paquete proporciona comandos y funciones adicionales para manejar y formatear URL (Uniform Resource Locator) y direcciones web en general dentro del texto de tu documento. Algunas de las características y capacidades clave de url incluyen: Formateo de URL: url proporciona el comando \url que formatea automáticamente las URL para garantizar que se muestren correctamente en el documento. Enlaces clicables: Cuando estás compilando un documento en formato PDF, las URL generadas con \url se vuelven clicables, permitiendo a los lectores hacer clic en ellas para abrir el enlace en un navegador web. Manejo de caracteres especiales: url maneja automáticamente caracteres especiales y espacios en blanco en las URL, asegurando que se muestren correctamente.
+\usepackage{pdfpages}
+\usepackage{standalone}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{tabularx}
+\usepackage{listings} %Puedes incluir el código de Octave dentro de un entorno lstlisting utilizando el paquete listings. Aquí tienes un ejemplo básico:
+\usepackage{array} %Puedes incluir el código de Octave dentro de un entorno lstlisting utilizando el paquete listings. Aquí tienes un ejemplo básico:
+
+
+% Configuración para ocultar recuadros de enlaces
+\hypersetup{
+    colorlinks=false, % No colorear los enlaces
+    hidelinks          % Ocultar recuadros de enlaces
+}
+
+%Colocar en negritas todos los caption de tablas y figuras
+\captionsetup[table]{labelfont={bf}}
+\captionsetup[figure]{labelfont={bf}}
+% Configuración global para centrar todos los captions de figuras
+\captionsetup[figure]{justification=centering, singlelinecheck=false}
+\captionsetup[table]{justification=centering, singlelinecheck=false}
+
+\pgfplotsset{compat=1.18}
+\graphicspath{{Circuitos/}}
+
+\newcommand{\volt}{\si{\volt}}
+\newcommand{\amp}{\si{\amp}}
+\newcommand{\ohm}{\si{\ohm}}
+\newcommand{\watt}{\si{\watt}}
+
+\ctikzset{%
+monopoles/vcc/arrow={Triangle[width=0.8*\scaledwidth, length=\scaledwidth]},
+monopoles/vee/arrow={Triangle[width=6pt, length=8pt]},
+resistors/thickness=3,
+}
+
+% Configuración de los encabezados y pies de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\textit{Electrónica II}}
+\fancyfoot[R]{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Ajusta la longitud del espacio entre párrafos
+\setlength{\parskip}{5pt} 
+
+% Configuración de los títulos de secciones
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}[\titlerule]
+
+\begin{document}
+\renewcommand{\tablename}{Tabla} %establece la palabra "Tabla" como el texto que precede al número.
+
+\input{portada}
+
+\input{indice}
+
+\input{introduccion}
+
+\input{resumen}
+
+\input{marco_teorico}
+
+\input{objetivos}
+
+\input{metodologia}
+
+\input{equipos_instrumentos}
+
+\input{componentes_materiales}
+
+\input{resultados}
+
+\input{analisis_resultados}
+
+\input{conclusiones}
+
+\input{apendice}
+
+\input{anexos}
+
+
+
+
+
+
+
+
+%Bibliografía
+
+\begin{thebibliography}{9}
+
+    \bibitem{GSlIndustrias}
+      Amplificador Operacional. (11 de enero de 2022). GSl Industrias. Disponible en: \url{https://industriasgsl.com/blogs/automatizacion/amplificador-operacional}
+      Consultado: 1 de julio.
+    
+    \bibitem{Bautista2019}
+      Bautista, A. (2019). Estudio de circuitos eléctricos en estado de circuito abierto. Revista de Investigación Académica, 36, 1-7. doi: 10.18359/ria.3636
+    
+    \bibitem{HernandezTorres2019}
+      Hernández, M., \& Torres, J. (2019). Diseño y construcción de fuentes de alimentación lineales. Tecnología en Marcha, 32, 52-57. doi: 10.18845/tm.v32i1.3677
+    
+    \bibitem{HorowitzHill2015}
+      Horowitz, P., \& Hill, W. (2015). \textit{The Art of Electronics} (3rd ed.). Cambridge University Press. (Capítulo 4, sección 4.4.1, Capítulo 4, sección 4.5.2). DOI: 10.1017/CBO9781139643773
+    
+    \bibitem{Gonzalez2015}
+      González, R. (2015). Análisis de cortocircuitos en sistemas eléctricos de potencia. Universidad Nacional de Colombia. Recuperado de \url{https://bdigital.unal.edu.co/51593/1/1086223851.2015.pdf} Consultado: 3 de julio
+    
+    \bibitem{GonzalezGarcia2018}
+      González, R., \& García, J. (2018). Estudio de la corriente de polarización en dispositivos electrónicos. Revista Iberoamericana de Tecnología en Educación y Educación en Tecnología, 24, 30-36. doi: 10.24215/18509959.24.e04
+    
+    \bibitem{GrayHurstLewisMeyer2001}
+      Gray, P. R., Hurst, P. J., Lewis, S. H., \& Meyer, R. G. (2001). \textit{Analysis and Design of Analog Integrated Circuits} (4th ed.). John Wiley \& Sons. (Capítulo 2, sección 2.3.1). DOI: 10.1109/EDT.2000.882767
+    
+    \bibitem{MehdiRazavi1998}
+      Mehdi, I., \& Razavi, B. (1998). A Flicker-Noise Measurement Technique Using a Vanishing-Gain Amplifier. \textit{IEEE Journal of Solid-State Circuits}, 33(5), 791-796. DOI: 10.1109/4.668882
+    
+    \bibitem{LiuLu2013}
+      Liu, Z., \& Lu, Y. (2013). Design of a High Precision Operational Amplifier with Multiple Feedback Loops. \textit{Journal of Electrical and Computer Engineering}, 2013, 1-7. DOI: 10.1155/2013/276765
+    
+    \bibitem{PerezMartinez2019}
+      Pérez, A., \& Martínez, J. (2019). Caracterización y simulación de reguladores de tensión monolíticos. Revista de Investigación Académica, 35, 1-8. doi: 10.18359/ria.3535
+    
+    \bibitem{SedraSmith2015}
+      Sedra, A. S., \& Smith, K. C. (2015). \textit{Microelectronic Circuits} (7th ed.). Oxford University Press. (Capítulo 5, sección 5.2.3, Capítulo 8, sección 8.1, Capítulo 11, sección 11.1.2, Capítulo 11, sección 11.3). DOI: 10.1093/acprof:oso/9780199339136.003.0016
+    
+    \bibitem{Smith2008}
+      Smith, J. (2008). Amplificadores operacionales: conceptos y aplicaciones. \textit{Revista de Electrónica}, 5(2), 25-30. Disponible en: \url{https://www.revelec.com/articulos/numeros/vol5num2/Articulo5_Vol5Num2.pdf} Consultado: 29 de junio.
+
+\end{thebibliography}
+
+
+
+
+\end{document}
+\label{LastPage}

@@ -1,0 +1,42 @@
+%Análisis de Resultados
+
+\section{Análisis de Resultados}
+
+    \subsection{Parte 1. Osciladores}
+        En el apartado \ref{sec:resultados}, se consiguen los resultados de la primera parte en el apartado \ref{subsec:parte1}.
+
+        Como se tienen en las tablas de los apartados mencionado anteriormente, el más relevante en este espacio son las tablas \ref{tab:desviacion_puente_wien_sc} y \ref{tab:desviacion_puente_wien_control}, allí podemos observar que no hubo un error mayor al 65.36 \% permitiendo evidenciar que el diseño para la configuración del Puente de Wien con control de amplitud, fueron los adecuados para las mediciones experimentales realizadas y lo que se quería demostrar, sin embargo, el error dado de último tuvo que ver un poco con la posición que se tomo del potenciómetro, debido a un defecto del potenciómetro en su estructura afectando el contacto, importante siempre verificar este tipo de inconvenientes para evitar errores tan grandes. Por otro lado, se llevo a cabo a través de esa topología un control de amplitud a consecuencia de un oscilador o generador, debido a que el amplificador operacional no posee un voltaje de entrada, solo se determina su voltaje de saturación por los voltajes de polarización en ambos polos.
+
+        Por otra parte, se evidencia en la tabla \ref{tab:exp_puente_wien_sincontrol} su único valor alcanzado en estabilidad fue con una variación del potenciómetro con un valor de x de 0.63, de allí en adelante o por debajo de ello se satura o corta, indicándonos que en la figura \ref{fig:puente_wien_control} sin control de amplitud, no permite valores extensos en el potenciómetro para obtener una salida estable. A diferencia de cuando se posee un control de amplitud, permitiéndonos controlar la señal de salida como se observa en la tabla \ref{tab:exp_puente_wien_control} donde al tener una valor del potenciómetro del 40 \% de su valor nominal, nos entrega una salida estable con un voltaje mucho menor al de saturación que seria de  $4 \pm 1 V$ indicando que hasta llegar al valor de 10\% del potenciómetro este se saturaría, permitiendo un control de amplitud adecuado, antes de que este se sature. 
+
+        Se utiliza comúnmente como un puente de medición de frecuencia en el cual se puede ajustar la frecuencia de la señal hasta que se equilibra el puente. 
+
+        En fin, los datos proporcionados en el sección \ref{sec:metodologia} de metodología fueron los adecuados permitiendo los objetivos de esta parte de la practica.
+
+    \subsection{Parte 2. Multivibradores}    
+        Como se observa en el apartado \ref{sec:resultados} en la segunda sección, nos dieron distintas tablas e imágenes para corroboran las características más importantes del multivibrador astable, este nos indica una oscilación donde no se mantiene estable hasta un cierto diseño para poder variar su frecuencia debido a la carga y descarga del capacitor, como se puede notar la tabla \ref{tab:exp_astable} y \ref{tab:desv_astable}, se tienen pequeños errores, indicando que los componentes usados en el diseño fueron los indicados para obtener una salida de 5KHz con una pequeña desviación de 9 \%. Se tiene la forma de onda de salida y del capacitor en la imagen \ref{fig:exp_astable_vc_vout}, donde se puede apreciar perfectamente el voltaje de salida saturada, generando una onda cuadrada donde esta mantiene la frecuencia a la que fue diseñada cercana a los 5 KHz, y se observa la carga y descarga del voltaje del capacitor delimitada por las subidas y bajadas de su voltaje de salida, recordando que es un circuito realimentado negativa y positivamente sin ninguna señal de entrada, permitiendo ser este circuito inestable sin embargo, se aprovecha esta singularidad para distintas aplicaciones donde puedas usar esa señal de salida cuadrada.
+
+        Por otro lado, tenemos el generador Monoestable, que se puede comportar como un astable, sino fuese por el circuito añadido que se observa en la figura \ref{fig:monoestable}, donde se le inyecta un voltaje negativo para generar una diferencia de potencial que permita el diodo conducir corriente y este pueda tener una salida estable cuando conduce, por lo contrario, se convierte en un circuito inestable con un posible tiempo de retardo que se indicará más adelante con la referencia de las imágenes que se hallan en el sección de resultados \ref{sec:resultados}.
+
+        En la tabla \ref{tab:exp_monoestable}, tenemos los puntos importantes medidos en el circuito \ref{fig:monoestable}, en este apartado tomaremos en cuenta la frecuencia máxima, la del pulso y el voltaje en ambas entradas del amplificador operacional. 
+
+        En la imagen \ref{fig:exp_monoestable_vc_vout}, se observa como el voltaje de salida se sigue manteniendo en un pulso pero en este caso con un duty cycle de 35.7 \%, acá detalla ese lado estable e inestable, siendo el estable el ciclo de encendido y el inestable el de apagado, en la siguiente imagen \ref{fig:exp_monoestable_vin_vout}, se puede evidencias como por cada pulso de entrada negativo, cuando este va a -5V el voltaje de salida cambia allí nos indica un pulso, más adelante en la siguiente imagen \ref{fig:exp_monoestable_vcat_vc} se detalla de mejor manera en la medición del circuito como por cada activación en su estado estable, es cuando el diodo que se encuentra en la entrada no inversora conduce, y cuando este ya no posee, la diferencia de potencial umbral que permite que el diodo conduzca se observa el lado inestable, cuando se convierte es un multivibrador astable.
+
+        Ahora uno de los datos más importante es el siguiente, donde se visualiza el pulso donde permite el cambio de estado visualizando el ciclo de carga y descarga del capacitor, donde apreciamos su estado estable e inestable en el circuito de medición.
+
+        De esta manera, podemos concluir en este análisis que el diseño realizado fue el adecuado para cumplir los objetivos de la practica y detallar el estudio de  circuitos no lineales utilizando el concepto de comparador haciendo uso de un amplificador operacional. 
+
+        
+
+    \subsection{Parte 3. Generador de Funciones}
+        Como se observa en el apartado de resultados \ref{sec:resultados}, se tiene distintos valores de las mediciones realizadas en el laboratorio, como se puede ver la tabla \ref{tab:desviacion_gf}, existen distintas desviaciones sin embargo, la que le prestamos mas atención es la de la frecuencia donde se obtiene un 28.6 \% de error, esto lo que ocasiona es que la señal que se tiene en la salida del integrador no seria un señal triangular, sino una senoidal, debido a que este tiene una señal de entrada cuadrada por ser un integrador aquellos pulsos constantes, nos genera una recta, al tener el tiempo menos rápido genera un tiempo de retardo permitiendo tener una señal de salida del integrador mas suave. 
+
+        Por otro lado, el voltaje de salida es mas alto de lo que se visualizo en la simulación del diseño realizado teóricamente, como se observa en la tabla. Lo importante del diseño y que se cumple es que el voltaje de salida del integrador, no supere ese voltaje debido a que este puede saturarse, cumpliendo con las especificaciones del diseño.
+
+        Las mediciones, análisis y diseño fueron los adecuados para esta practica. 
+
+        Otro dato importante es los diodos que se encuentra en la etapa de salida, lo que permite estos son la regulación de voltaje a consecuencia del diodo zener, y el puente de diodos lo que nos permite es que esto funcione tanto para los valores positivos como los negativos.
+    
+
+
+\newpage

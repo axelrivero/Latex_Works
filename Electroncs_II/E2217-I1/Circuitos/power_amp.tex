@@ -1,0 +1,7 @@
+
+\begin{circuitikz}\draw
+   \power{power}{in 3}
+    (driv-out 1) -| (power-in 1) ++(0,0) node[vcc](VCC){$10\volt$}
+    (driv-out 2) -| (power-in 2) ++(0,-0.25) node[vee](VEE){$-10\volt$}
+    (0,0) to[C,l=$C_{7}$,*-*]++(-2,0) 
+;\end{circuitikz}

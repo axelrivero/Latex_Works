@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\begin{document}
+    \begin{circuitikz}\draw
+        node[op amp] (OP1){741}
+        (OP1.+) --++ (-0.25,0) coordinate(L1)
+        to[R=$R_{8}$,-*] ++(-2,0) node[left]{$V_{i}$}
+
+        (OP1.-) --++ (0,1) coordinate(L2)
+        to[R=$R_{7}$,*-*] ++ (-2,0) node[ground](){}
+        (L2) to[R=$R_9$,*-*] ++(2,0) coordinate(L3)
+        (OP1.out) --++ (2,0) coordinate(L4)
+        (L3) to[R=$R_{10}$,*-*] (L3-|L4)--(L4)
+
+        (L3) -- ++(0,1)to[open jumper,l=$J_{p4}$]++(2.37,0)-- (L3-|L4)--(L4)
+        (L2) -- ++(0,2)to[open jumper,l=$J_{p3}$]++(4.37,0)-- (L2-|L4)--(L4)
+    ;\end{circuitikz}
+\end{document} 

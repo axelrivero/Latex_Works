@@ -1,0 +1,77 @@
+%Análisis de Resultados
+
+\section{Análisis de Resultados}
+
+\subsection{Parte 1. Amplificador de Potencia}
+
+Como se puede observar en la sección de Resultados \ref{sec:resultados} en la parte 1 \ref{subsec:parte1}, se obtuvieron distintos resultados donde nos indican el comportamiento del amplificador de potencia empezando con la tabla \ref{tab:puntos_operacion_experimental_maserror}, allí nos indica si el circuito tiene la polarización adecuada para poder operar de manera dinámica como se desea, siendo un amplificador tipo B por ser una configuración Push-Pull donde se generó un efecto crossover, sin embargo, entre ambos transistores que posee la configuración, se tiene el multiplicador Base-Emisor, que es el encargado de mantener a ambos transistores que seria $Q_5$ y $Q_6$ justo en su zona umbral, de esta manera evita ese efecto como se puede observar en las imágenes \ref{fig:crossover} (con crossover) y \ref{fig:sincrossover} (sin crossover); Este efecto puede ser corregido con el potenciómetro de el multiplicador base emisor, justo en su zona media, corrigiendo de amplificador tipo B a Tipo AB.
+
+
+Se pueden observar los diferentes errores porcentuales, donde el mas apreciables se hallar en la impedancia de salida que se halla en la tabla \ref{tab:error_porcentual1_zo}, por otra parte, se pudo apreciar que al no colocarle una escala adecuada al osciloscopio, ya sea para su div/volt o div/time, podemos generar incertidumbres grandes, logrando de esta manera desestimar las mediciones.
+
+De debe mejorar la escala en el osciloscopio para minimizar su incertidumbre. Importante recalcar, que cada uno de los equipos usados por no tener tanto tiempo de antigüedad menos de dos años, se encuentran calibrados y su efecto de carga no se ve reflejado en las lecturas, debido a esto obtuvimos óptimos valores en los errores porcentuales, asemejándose a los cálculos teóricos.
+
+\subsection{Parte 2. Amplificador Diferencial}
+
+Ahora bien, visualizando la segunda parte que se halla en la sección \ref{subsec:parte2}. Acá no se aleja de lo realizado en la primera parte con respecto a sus puntos de operación se pudo observar en la tabla \ref{tab:puntos_operacion_experimental_maserror_parte2}, indicando el error porcentual que se halla en el punto estático adecuado para poder entregarle una señal de entrada y que obtengamos el análisis adecuado en dinámico, y como se puede ver en las tablas \ref{tab:ganancia_ed} y \ref{tab:ganancia_ed_modo_comun}, allí es donde se halla la diferencia, como lo indica esta etapa diferencial, sin redundar, este amplificador tiene una particularidad, y esa es que ella posee dos entradas las cuales serán amplificadas por su respectiva diferencia entre sus señales, de ahi que reside su nombre. Además, los errores porcentuales son bajos, percibiendo que los cálculos realizados fueron los correctos.
+
+Aparte, otra acotación importante es que en esta etapa, en su modo común es para poder verificar su CMRR (Relación de Rechazo de Modo Común), este mientras mas grande mucho mejor, analizando este factor nos da a entender que no permitirá la entrada de ruidos por el rechazo modo común, en la tabla \ref{tab:medida_indirecta_cmrr_ed} se obtuvo un error despreciable, sin embargo, lo resaltable en este punto es que se tiene un CMRR de 20, indicando que no es una buena configuración para rechazar l ruido, esto se puede mejorar con resistencias de precisión, con una entradas de voltajes simétrica, de esta manera evitamos mas el ruido, y verificar sus capacitores de acople.
+
+Otro dato apreciable fueron sus limites de excursión, en modo común permitió mayor valores de voltajes de entrada, debido a que en este modo, su ganancia es muy baja, limitando la señal a una mayor entrada, pero es compensada con su salida, ya que esta es menor que cuando esta en modo diferencial, lo puede apreciar en las tablas \ref{tab:exp_lim_exc_modif} y \ref{tab:exp_lim_exc_mocom}.
+
+Aunque se obtuvo las medidas esperadas, esta configuración no es la adecuada para esta etapa, sin embargo, en la siguiente sección tendrá mas sentido esta etapa al ser acoplada con otras.
+
+\subsection{Parte 3. Amplificador Multietapas}
+
+En este apartado de la parte 3 \ref{subsec:parte3}, se tiene un amplificador multietapas, como se mencionó anteriormente cada una de las etapas nombradas anteriormente se iban a acoplar con una adicional llamada la etapa impulsora o driver, cada una de estas etapas da una configuración al circuito, obteniendo una ganancia de salida alta.
+
+Aunque primero, se tomará en cuenta sus polarizaciones como se puede ver en las tablas \ref{tab:puntos_operacion_experimental_maserror_parte3} y \ref{tab:puntos_operacion_experimental_maserror_parte3_des} donde se aprecia que aunque estén acopladas o desacopladas ellas mantendrán sus puntos de operación, esto debido a que cada uno de los capacitores que se convierte en un acople, tiene distintas funciones para DC (abierto) o AC (Corto) y esto a frecuencias medias, de esa manera, se mantiene nuestra recta dinámica para obtener una salida adecuada.
+
+Por otra parte, se puede observar la impedancia de entrada y salida estas son adecuadas para un buen amplificador debido a que su entrada es grande y su salida es baja, adecuado para amplificar señales pequeñas a frecuencias medias.
+
+En las anteriores etapas si se puede apreciar es la diferencia entre sus impedancias de entrada y salida, en la diferencial, su impedancia de entrada y salida son grandes; la de potencia, su entrada es grande y su salida es pequeña; y por último la etapa impulsora, donde su entrada es baja, y su salida es alta, por separados tienen funciones distintas, ahora bien, si los acoplamos, obtenemos un amplificador base, con las características necesarias.
+
+Sin embargo, algo importante recalcar es que esta multietapas aun sigue obteniendo un CMRR bajo (ver tabla \ref{tab:medida_indirecta_cmrr_me}), obteniendo ruido, verificado cuando se tomaron las lecturas.
+
+\subsection{Parte 4. Respuesta en frecuencia}
+
+
+Claro, aquí tienes una versión más extendida y detallada de la explicación sobre la respuesta en frecuencia de un amplificador base con tres amplificadores acoplados: de potencia, impulsora y diferencial.
+
+Como se analizó en la sección de resultados \ref{sec:resultados}, en la parte 4 \ref{subsec:parte4}, se estudió el análisis de la respuesta en frecuencia del amplificador base compuesto por tres etapas acopladas: potencia, impulsora y diferencial. Este análisis es crucial para entender el comportamiento del amplificador en diferentes rangos de frecuencia y cómo las distintas etapas contribuyen al rendimiento global del sistema.
+
+\begin{itemize}
+      \item Respuesta en Frecuencia del Amplificador
+            La respuesta en frecuencia de un amplificador describe cómo varía su ganancia en función de la frecuencia de la señal de entrada. Este análisis permite observar detalladamente el comportamiento que se había simulado y comparar los resultados teóricos con los obtenidos experimentalmente. A través de este estudio, se pueden identificar errores que surgen debido a las mediciones tomadas y otras posibles discrepancias entre la teoría y la práctica.
+
+
+      \item Ganancia en Frecuencias Bajas
+            En la región de frecuencias bajas, la ganancia del amplificador es generalmente alta. Esto se debe a que los capacitores de acoplamiento y desacoplamiento, así como cualquier capacitor de bypass en el circuito, tienen una alta impedancia a bajas frecuencias, permitiendo que la señal pase sin atenuación significativa. Sin embargo, es importante considerar que la ganancia en esta región puede estar afectada por el comportamiento de los componentes reactivos y la estabilidad del amplificador.
+
+      \item Ganancia en Frecuencias Medias
+            En la región de frecuencias medias, el amplificador generalmente opera en su banda de paso, donde la ganancia se mantiene relativamente constante y máxima. Esta es la región donde el amplificador muestra su comportamiento óptimo. Aquí, la respuesta en frecuencia es menos afectada por los efectos de los capacitores de acoplamiento y desacoplamiento, y la ganancia es determinada principalmente por las características de los transistores y la configuración del circuito. Es en esta banda donde se evalúa la eficiencia del diseño del amplificador y su capacidad para amplificar señales sin distorsión significativa.
+
+      \item Ganancia en Frecuencias Altas
+            A frecuencias altas, la ganancia del amplificador comienza a disminuir debido a los efectos de los componentes parásitos y las limitaciones de los transistores. La capacitancia interna de los transistores y la inductancia de los cables y trazas del PCB (placa de circuito impreso) pueden introducir atenuación y fase en la señal. Este comportamiento limita la banda de paso del amplificador y define su frecuencia de corte superior. Identificar esta frecuencia de corte es esencial para determinar el rango operativo del amplificador y asegurar que cumpla con los requisitos de diseño.
+
+      \item Frecuencias de Corte
+            Las frecuencias de corte del amplificador son puntos críticos que delimitan la banda de paso efectiva del amplificador. La frecuencia de corte inferior está determinada por los componentes de acoplamiento y desacoplamiento y marca el punto donde la ganancia comienza a disminuir en frecuencias bajas. La frecuencia de corte superior, por otro lado, está influenciada por las capacitancias parásitas y otros efectos de alta frecuencia, y marca el punto donde la ganancia comienza a disminuir en frecuencias altas. Estas frecuencias de corte son fundamentales para diseñar filtros adecuados y para asegurar que el amplificador funcione correctamente en su rango de operación deseado.
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\subsection{Parte 5. retroalimentación}
+
+En este apartado, que se halla en la seccion \ref{subsec:parte5}, se observo lo viable que puede ser una retroalimentación negativa, debido a su aumento de ancho de banda, aunque por desventaja se tiene una disminución en su ganancia, sin embargo, permite ser mas estable.
+
+Por otro lado se puede observar, ambas retroalimentación donde permite la saturación de la salida como se ve en la imagen \ref{fig:realimentacionpositiva} que nos generan unas ondas con pequeñas cargas y descargas por la configuración del circuito.
+
+
+\newpage

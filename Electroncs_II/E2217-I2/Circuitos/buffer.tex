@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\begin{document}
+    \begin{circuitikz}\draw
+        node[op amp] (OP1){741}
+        (OP1.+) to[short, -*] ++(-1,0) node[above]{$V_{in}$}
+        (OP1.-) --++(0,1)to[short,*-*]++(2.37,0) -- (OP1.- -| OP1.out) -- (OP1.out) node[right]{$V_{0}$}
+    ;\end{circuitikz}
+\end{document}

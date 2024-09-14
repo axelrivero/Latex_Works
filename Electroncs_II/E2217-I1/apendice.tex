@@ -1,0 +1,115 @@
+%Apéndice
+
+\section{Apéndice} \label{sec:apendice}
+
+\subsection{Formula de propagación de incertidumbres}
+
+La fórmula general es:
+
+\[ \Delta Q = \sqrt{\left(\frac{\partial Q}{\partial A} \Delta A\right)^2 + \left(\frac{\partial Q}{\partial B} \Delta B\right)^2 + \ldots}
+    \label{eqn:incertidumbre}
+\]
+
+Donde:
+\begin{itemize}
+    \item \( Q \) es la cantidad derivada,
+    \item \( A, B, \ldots \) son las cantidades medidas,
+    \item \( \Delta A, \Delta B, \ldots \) son las incertidumbres asociadas a las cantidades medidas, y
+    \item \( \frac{\partial Q}{\partial A}, \frac{\partial Q}{\partial B}, \ldots \) son las derivadas parciales de \( Q \) con respecto a \( A, B, \ldots \).
+\end{itemize}
+
+
+\subsubsection{Incertidumbre de $V_{CEQ}$}
+\begin{gather}
+    V_{CE}=(V_C-V_E)\pm \Delta V_{CE} \nonumber \\[0.2cm]
+    \Delta V_{CE} =  \sqrt{\left(\dfrac{\partial V_{CE}}{\partial V_C}\Delta V_C\right)^2+\left(\dfrac{\partial V_{CE}}{\partial V_E}\Delta V_E\right)^2} \nonumber \\[0.2cm]
+    \Delta V_{CEQ} = \sqrt{\left(\Delta V_C\right)^2 + \left(\Delta V_E\right)^2}
+    \label{eqn:incertidumbre_vce}
+\end{gather}
+
+\subsubsection{Incertidumbre de $I_{CQ}$}
+\begin{gather}
+    I_{CQ} = \left(\dfrac{V_{A}-V_B}{R}\right) \pm \Delta I_{CQ} \nonumber \\[0.2cm]
+    \Delta I_{CQ} =  \sqrt{\left(\dfrac{\partial I_{CQ}}{\partial V_{A}}\Delta V_{A}\right)^2+\left(\dfrac{\partial I_{CQ}}{\partial V_B}\Delta V_B\right)^2+\left(\dfrac{\partial I_{CQ}}{\partial R}\Delta R\right)^2} \nonumber \\[0.2cm]
+    \Delta I_{CQ} = \sqrt{\left(\frac{\Delta V_{A}}{R}\right)^2 + \left(\frac{\Delta V_{B}}{R}\right)^2 + \left(\frac{(V_{A} - V_{B}) \cdot \Delta R}{R^2}\right)^2}
+    \label{eqn:incertidumbre_ic}
+\end{gather}
+
+Donde, $V_A > V_B$
+
+\subsubsection{Incertidumbre de ganancia de tensión}
+\begin{gather}
+    A_v = \left(\dfrac{V_o}{V_{in}}\right) \pm \Delta A_v  \nonumber \\[0.2cm]
+    \Delta A_v = \sqrt{\left(\dfrac{\partial A_v }{\partial V_{in}}\Delta V_{in}\right)^2+\left(\dfrac{\partial A_v }{\partial V_o}\Delta V_o\right)^2} \nonumber \\[0.2cm]
+    \Delta A_v = \sqrt{\left(\dfrac{V_o}{V_{in}}\Delta V_{in}\right)^2 + \left(\dfrac{1}{V_{in}}\Delta V_o\right)^2}
+    \label{eqn:incertidumbre_av}
+\end{gather}
+
+\subsubsection{Incertidumbre de la impedancia de entrada diferencial}
+
+\begin{gather}
+    z_d=\left(\dfrac{R_pV_{in}}{V_g-V_{in}}\right)\pm \Delta Z_d  \nonumber \\[0.2cm]
+    \Delta Z_d = \sqrt{\left(\dfrac{\partial Z_d}{\partial R_p}\Delta R_p\right)^2 +\left(\dfrac{\partial Z_d}{\partial V_{in}}\Delta V_{in}\right)^2+\left(\dfrac{\partial Z_d}{\partial V_g}\Delta V_g\right)^2} \nonumber \\[0.2cm]
+    \Delta Z_d = \sqrt{\left(\dfrac{V_{in}}{V_g-V_{in}}\Delta R_p\right)^2 +\left(\dfrac{R_p(V_g-V_{in}-R_pV_{in}(-1))}{(V_g-V_{in})^2}\Delta V_{in}\right)^2+\left(\dfrac{-R_pV_{in}}{(V_g-V_{in})^2}\Delta V_g\right)^2} \nonumber \\[0.2cm]
+    \Delta Z_d = \sqrt{\left(\dfrac{V_{in}}{V_g-V_{in}}\Delta R_p\right)^2 +\left(\dfrac{R_pV_g}{(V_g-V_{in})^2}\Delta V_{in}\right)^2+\left(\dfrac{-R_pV_{in}}{(V_g-V_{in})^2}\Delta V_g\right)^2}
+\end{gather}
+
+\subsubsection{Incertidumbre de la impedancia de entrada comun}
+
+\begin{gather}
+    Z_C=2\left(\dfrac{R_pV_{in}}{V_g-V_{in}}\right)\pm \Delta Z_C
+    \nonumber \\[0.2cm]
+    \Delta Z_C = 2 \Delta Z_d \nonumber \\[0.2cm]
+    \Delta Z_C = 2\,\sqrt{\left(\dfrac{V_{in}}{V_g-V_{in}}\Delta R_p\right)^2 +\left(\dfrac{R_pV_g}{(V_g-V_{in})^2}\Delta V_{in}\right)^2+\left(\dfrac{-R_pV_{in}}{(V_g-V_{in})^2}\Delta V_g\right)^2}
+\end{gather}
+
+\subsubsection{Incertidumbre de la impedancia de salida}
+
+\begin{gather}
+    Z_o = \left(\dfrac{R_p(V_{osc}-V_{occ})}{V_{occ}}\right) \pm \Delta Z_o \nonumber \\[0.2cm]
+    \Delta Z_o = \sqrt{\left(\dfrac{\partial Z_o}{\partial R_p}\Delta R_p\right)^2 +\left(\dfrac{\partial Z_o}{\partial V_{osc}}\Delta V_{osc}\right)^2+\left(\dfrac{\partial Z_o}{\partial V_{occ}}\Delta V_{occ}\right)^2} \nonumber \\[0.2cm]
+    \Delta Z_o = \sqrt{\left(\dfrac{V_{osc}-V_{occ}}{V_{occ}}\Delta R_p\right)^2 +\left(\dfrac{R_p}{V_{occ}}\Delta V_{osc}\right)^2+\left(\dfrac{-R_pV_{occ}-R_p(V_{osc}-V_{occ})}{ V_{occ}^2}\Delta V_{occ}\right)^2} \nonumber \\[0.2cm]
+    \Delta Z_o = \sqrt{\left(\dfrac{V_{osc}-V_{occ}}{V_{occ}}\Delta R_p\right)^2 +\left(\dfrac{R_p}{V_{occ}}\Delta V_{osc}\right)^2+\left(\dfrac{R_pV_{osc}}{ V_{occ}^2}\Delta V_{occ}\right)^2}
+\end{gather}
+
+\subsubsection{Incertidumbre del CMRR}
+
+\begin{gather}
+    \rho = \left(20\log \left(\dfrac{A_d}{A_c}\right)\right) \pm \Delta \rho \nonumber \\[0.2cm]
+    \Delta \rho = 20 \sqrt{\left(\dfrac{\partial \rho}{\partial A_d}\Delta A_d\right)^2 +\left(\dfrac{\partial \rho}{\partial A_c}\Delta A_c\right)^2} \nonumber \\[0.2cm]
+    \Delta \rho = 20 \sqrt{\left(\dfrac{A_c}{A_d A_c}\Delta A_d\right)^2 +\left(\dfrac{A_c (-A_d)}{A_d A_c^2}\Delta A_c\right)^2} \nonumber \\[0.2cm]
+    \Delta \rho = 20 \sqrt{\left(\dfrac{1}{A_d }\Delta A_d\right)^2 +\left(\dfrac{1}{A_c}\Delta A_c\right)^2}
+\end{gather}
+
+
+\subsubsection{Incertidumbre de frecuencia}
+
+\begin{gather}
+    f=\left(\dfrac{1}{T}\right) \pm \Delta f \nonumber \\[0.2cm]
+    \Delta f = \sqrt{\left(\dfrac{\partial f}{\partial T} \Delta T\right)^2} = \pm \dfrac{\partial f}{\partial T} \Delta T \nonumber \\[0.2cm]
+    \Delta f = \pm \dfrac{1}{T^2}\Delta T
+\end{gather}
+
+\subsubsection{Incertidumbre en la medición del intervalo de tiempo ($\Delta T$) dependiendo de varios factores}
+
+Incertidumbre dada por las especificaciones técnicas del manual de usuario del osciloscopio marca Unit, modelo: UTD2102CEX+, puede verse en el apartado de Anexos, capitulo \ref{sec:anexos}
+
+\begin{gather}
+    \Delta T = \pm \left( \text{intervalo de muestreo} + 50 \text{ ppm} \times \text{lectura} + 0.6 \text{ ns} \right)
+    \label{eqn:delta_t}
+\end{gather}
+
+\subsection{Incertidumbre en la medición de la diferencia de tensión ($\Delta V$)}
+
+Incertidumbre dada por las especificaciones técnicas del manual de usuario del osciloscopio marca Unit, modelo: UTD2102CEX+, puede verse en el apartado de Anexos, capitulo \ref{sec:anexos}
+
+\begin{gather}
+    \Delta V = \pm (3\% \times \textbf{lectura} + 0.05 \textbf{div} ) \label{eqn:delta_v}
+\end{gather}
+
+
+
+
+
+
+\newpage

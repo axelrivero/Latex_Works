@@ -1,0 +1,24 @@
+\documentclass{standalone}
+\usepackage{siunitx}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+    \begin{circuitikz}\draw
+        node[op amp, noinv input up, anchor=+](OA){741}
+
+        (OA.-) -- ++(0,-1) coordinate(FB)
+        to[R=$R_1$,-*] ++(0,-2) node[ground](){}
+        (FB) to[R=$R_6$, *-*] (FB -| OA.out) -- (OA.out)
+        to[short, *-*] ++(1,0) node[above]{$V_{o}$}
+
+        (OA.+) -- ++(0,1) coordinate(LB)
+        to[R=$R_5$,-*] ++(0,2) --++(-0.5,0) node[ground](){}
+        (LB) to[R=$R_7$, *-*] (LB -| OA.out) -- (OA.out)
+        to[short, *-*] ++(1,0) node[above]{$V_{o}$}
+        (LB) to[R=$R_4$,*-*] ++(-3,0) to[battery2, l_=5V] ++(0,-1) node[ground]{}
+
+    ;\end{circuitikz}
+
+\end{document}

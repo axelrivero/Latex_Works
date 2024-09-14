@@ -1,0 +1,31 @@
+\centering 
+\ctikzset{tripoles/mos style/arrows} 
+\begin{circuitikz}[transform shape,scale=1] 
+ 
+\def\OpAmpsopamp(#1)#2#3{%
+  \begin{scope}[#1,transform canvas={scale=1}]
+  \draw (0.0,0.25) -- (1.0,-0.25);
+  \draw (0.0,-0.75) -- (1.0,-0.25);
+  \draw (0.0,0.25) -- (0.0,-0.75);
+  \draw (0.0625,0.0) -- (0.1875,0.0);
+  \draw (0.0625,-0.5) -- (0.1875,-0.5);
+  \draw (0.125,-0.5625) -- (0.125,-0.4375);
+  \draw (0.5,0.25) coordinate (#2 text);
+  \draw (0.0,0.0) coordinate (#2 X0);
+  \draw (0.0,-0.5) coordinate (#2 X1);
+  \draw (1.0,-0.25) coordinate (#2 X2);
+  \end{scope}
+  \draw (#2 text) node[right] {#3};
+}
+\draw (2.25,-3.5) node[ground] {} ;
+\node[right] at (5.5,-2.5) {Vosc} ;
+\node[right] at (1.50,-2.25) {Vi} ;
+\OpAmpsopamp (shift={(3.5,-2.25)},rotate=0  ) {B0} {AmpOp};
+\draw (B0 X0) to[short,-] (2.875,-2.25) ;
+\draw (5.5,-2.5) to[short,-] (5.0,-2.5) ;
+\draw (B0 X1) to[short,-] (2.25,-2.75) ;
+\draw (2.25,-3.5) to[short,-] (2.25,-2.75) ;
+\draw (2.875,-2.25) to[short,-] (2.25,-2.25) ;
+\draw (5.0,-2.5) to[short,-] (B0 X2) ;
+
+\end{circuitikz}

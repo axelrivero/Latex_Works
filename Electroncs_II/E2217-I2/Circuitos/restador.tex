@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\begin{document}
+    \begin{circuitikz}\draw
+        node[op amp, noinv input up, anchor=+](OA){741}
+        (OA.+) -- ++(-0.5,0) coordinate(a)
+        to[R=$R_3$,-*] ++(-2,0) node[above]{$V_{3}$}
+        (a) to[R, l = $R_{5}$,*-*] ++ (0,2) --++(-0.5,0) node[ground](){}
+
+        (OA.-) -- ++(0,-1) coordinate(FB)
+        to[R=$R_1$,-*] ++(0,-2) node[right]{$V_{1}$}
+        (FB) to[R=$R_6$, *-*] (FB -| OA.out) -- (OA.out)
+        to[short, *-*] ++(1,0) node[above]{$V_{o}$}
+    ;\end{circuitikz}
+\end{document}
