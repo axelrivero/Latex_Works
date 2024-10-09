@@ -1,0 +1,63 @@
+\section{Propuesta de diseño} \label{sec:propuesta}
+
+    En este apartado el enfoque va dirigido a la simulación a realizar para poder observar, calcular y mitigar, en especial un tipo de pérdida en la línea de transmisión. Esta sera la pérdida resistiva del conductor como se estudia más adelante, de una manera detallada en las secciones \ref{sec:marco_teorico} y \ref{sec:dispositivos}. 
+
+    La propuesta de diseño se desea plasmar a través de gráficas que demuestren que con diferentes materiales de un conductor se puede aminorar las perdidas de este, por ende, permite demostrar de una manera sencilla y simplificada, a través de los cálculos, lo que se puede detallar en la vida real simulando los datos que se tienen para la ejecución de un proyecto basado en el despliegue de una línea de transmisión.
+
+    \subsection{Demostración}
+
+        \begin{enumerate}
+            \item \textbf{Facilidad de simulación:} las pérdidas resistivas dependen directamente de la resistencia del conductor, la corriente y la longitud de la línea, lo cual es sencillo de modelar y simular.
+
+            \item \textbf{Disponibilidad de medidas:} se puede simular el comportamiento de una línea de transmisión aplicando las leyes básicas de Ohm y calcular las pérdidas de potencia en función de las propiedades del conductor.
+
+            \item \textbf{Mitigación clara:} La mitigación se puede realizar al aumentar el diámetro del conductor, cambiar el material o mejorar la calidad del conductor, lo que permite incluir fácilmente en la simulación y observar los resultados.
+        \end{enumerate}
+
+    \subsection{Proceso}
+
+        \begin{enumerate}
+            \item Definir los parámetros de la línea de transmisión:
+
+                \begin{itemize}
+                    \item \textbf{Longitud de la línea:} $L$ en metros.
+
+                    \item \textbf{Resistencia del conductor (Medida indirecta):} se utiliza la fórmula \ref{eq:rho}, $R=\rho        \dfrac{L}{A}$, donde:
+
+                        \begin{align*}
+                            \rho &= \text{es la resistividad del material (ejemplo, para el cobre,} \, \rho \approx 1.8 \times 10^{-8} \, \Omega \cdot m). \\[0.2cm]
+                            A &= \text{es el área de la sección transversal del conductor.}
+                        \end{align*}
+
+                    \item \textbf{Corriente: } $I$ en amperios.
+                    
+                \end{itemize}
+
+            \item \textbf{Cálculo de las pérdidas resistivas:} Se utiliza la fórmula de pérdidas resistivas \ref{eq:pot_resistiva}: $P_{perdida}=I^2R$
+
+                \begin{itemize}
+                    \item \textbf{Entrada:}  Se define un valor de corriente y calcula la resistencia de la línea.
+
+                    
+                    \item \textbf{Salida:} Calcula las pérdidas resistivas.
+                \end{itemize}
+
+            \item \textbf{Implementación de mitigación:}
+
+                Como se observa en la formula \ref{eq:pot_resistiva}, las pérdidas resistivas o la potencia que se pierde es directamente proporcional a la resistencia, debido a esto se puede asumir que al cambiar el diámetro del conductor y recalcular las pérdidas, ya sea aumentando el área de la sección transversal $A$, disminuirá la resistencia $R$ y, por lo tanto, las pérdidas también. 
+
+                De hecho, se puede aplicar otro escenario, que es al cambiar el material del conductor, siendo este la propiedad de la resistividad siendo proporcional a la resistencia, si se utiliza uno con menor resistividad (por ejemplo, cambiar de aluminio a cobre) y recalcular las perdidas. Como consecuencia se obtendrá una reducción en su perdida.
+
+            \item \textbf{Simulación gráfica:}
+
+                Se puede generar gráficos que muestren cómo varían las pérdidas en función de la corriente, el diámetro del conductor y/o la resistividad del material. Esto permitirá visualizar el efecto de la mitigación.
+        \end{enumerate}
+
+        Es importante acotar, que las simulaciones se llevará a cabo a través del lenguaje de programación Python, siendo esta la herramienta facilitadora de los cálculos y la gráfica pertinente.
+    
+
+
+
+
+
+\newpage

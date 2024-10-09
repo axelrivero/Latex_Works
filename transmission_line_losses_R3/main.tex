@@ -1,0 +1,113 @@
+% Tipo de documento
+\documentclass[a4paper,12pt,spanish]{article}
+
+% Configuración de codificación y lenguaje
+\usepackage[es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    % Buena codificación de fuentes
+
+% Configuración de fuentes y estilo de página
+\usepackage{newtxtext,newtxmath}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage[margin=1in , headheight=20pt]{geometry}
+
+% Configuración de gráficos, tablas, listas y figuras
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{enumitem}
+%\usepackage{pdfpages}
+
+% Configuración de matemáticas y unidades
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+
+% Carga del paquete csquotes para manejar citas correctamente
+\usepackage{csquotes}
+% Carga del paquete biblatex (bibliografía)
+\usepackage[backend=biber, style=ieee]{biblatex} 
+% Añadir la base de datos de bibliografía
+\addbibresource{bibliografia.bib} 
+
+% Configuración de enlaces y referencias
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black, hidelinks]{hyperref}
+\usepackage{lastpage}
+
+
+%Puedes incluir el código de cualquier LP dentro de un entorno lstlisting utilizando el paquete listings.
+\usepackage{listings} 
+%Ajusta los colores de tu codigo
+\usepackage{xcolor}
+
+% Configuración de interlineado
+\setstretch{1.5}
+
+% Configuración de sangría
+\parindent=1.27cm
+
+% Configuración de títulos de secciones
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}[\titlerule]
+
+% Configuración de Figuras y Tablas
+\captionsetup[figure]{labelfont={bf}}
+%\captionsetup[table]{labelfont={bf}}
+
+% Configuración de los encabezados y pie de página con fancyhdr
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{\leftmark}}
+\fancyhead[R]{\textit{\rightmark}}
+\fancyfoot[L]{\textit{Redes Eléctricas III}}
+\fancyfoot[C]{\textit{\thepage/\pageref{LastPage}}}
+\fancyfoot[R]{\textit{Semestre 2024-1}}
+\renewcommand{\footrulewidth}{1pt} % Ancho de la línea divisoria
+\renewcommand{\headrulewidth}{1pt} % Establece el ancho de la línea divisoria del encabezado
+
+%Configuración de listings
+\lstset{
+  language=Python,         % Lenguaje del código
+  basicstyle=\ttfamily\small, % Estilo básico de la fuente
+  keywordstyle=\color{blue},  % Color de las palabras clave
+  commentstyle=\color{gray},  % Color de los comentarios
+  stringstyle=\color{red},    % Color de los strings
+  breaklines=true,            % Cortar las líneas largas
+  frame=single,               % Colocar marco alrededor del código
+  captionpos=b                % Posición del título
+}
+\renewcommand{\lstlistingname}{Código}
+
+
+
+
+
+\begin{document}
+    
+    \input{portada}
+    
+    \input{indice}
+    
+    \input{introducion}
+
+    \input{planteamiento}
+    
+    \input{marco_teorico}
+    
+    \input{dispositivos}
+    
+    \input{propuesta}
+    
+    \input{simulacion}
+    
+    \input{conclusion}
+    
+    \printbibliography
+
+    %\nocite{*}
+    
+\label{Lastpage}
+
+\end{document}
+

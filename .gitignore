@@ -10,3 +10,12 @@
 *.fdb_latexmk
 *.synctex.gz
 *.synctex(busy).gz
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.bcf-SAVE-ERROR
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
